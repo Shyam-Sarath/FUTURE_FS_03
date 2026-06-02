@@ -222,15 +222,19 @@ function App() {
         {/* Parallax Background Image */}
         <motion.div 
           style={{ y: y1, opacity }}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 overflow-hidden"
         >
           <img 
             alt="Cafe Interior" 
-            className="w-full h-full object-cover opacity-50" 
+            className="w-full h-full object-cover brightness-90 contrast-125 opacity-70" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCngnwecmlJhHnMQZmz3isj7Lal3_AthaA0ZZT3mYW488VZH17bRijXBNI0CqDL2OC_ABRnRVovJuEZOYvCbwsvCSzxDepfoCN-i4uI3QHoZOg2lAXw_wfHRIU8eJvJ2ZuZrdJAgZ2KcOgyXTBRu6WL1XDtgovWbChYuHPeDycwHFAf357Mck5-Ng3fbSWTrgkfqZmUgAVevBodiAdRptN2p6ezH6DP5rR6WtNCrPbM2V2VpskU7gSq1skvnpZW-Tp2-s9wGvWf3xQ"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#131313] via-[#131313]/70 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent"></div>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-12 right-0 w-96 h-96 rounded-full bg-secondary/10 blur-3xl opacity-60 mix-blend-screen" />
+            <div className="absolute -bottom-16 left-0 w-80 h-80 rounded-full bg-primary-container/10 blur-3xl opacity-55 mix-blend-screen" />
+          </div>
         </motion.div>
         
         {/* Ambient Neon Glow Blobs */}
@@ -390,8 +394,10 @@ function App() {
       </section>
 
       {/* Menu Grid Section */}
-      <section id="menu" className="py-20 bg-[#1c1b1b]">
-        <div className="px-6 max-w-7xl mx-auto">
+      <section id="menu" className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,20,147,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(198,243,17,0.12),transparent_30%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/10 via-[#111111]/20 to-[#131313]/95 pointer-events-none" />
+        <div className="relative px-6 max-w-7xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
